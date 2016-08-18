@@ -1,0 +1,31 @@
+import random
+enemy = 'Spider'
+gender = False
+
+
+
+
+def fight_enemy(enemy):
+    fdmg1 = int(random.randint(1,7))
+    edmg1 = int(random.randint(1,6))
+    print("You hit a", fdmg1)
+    print("The " + enemy + " hits a", edmg1) # <== Changed
+    input()
+    if edmg1 > fdmg1:
+        print("You died")
+    elif edmg1 < fdmg1:
+        print("You killed the " + enemy) # <== Changed
+    else:
+        print("You didnt kill the " + enemy + " but you managed to escape") # <=== Changed
+
+def intro_1():
+    print("\nYou're a man with a mission or girl idc tbh\n wait hold you you choose ok?")
+    gender = input("\n[What is gender]\n")
+    print("\nYou're a {} c now i care ^.^".format(gender))
+    input()
+    print("\nGood luck {}".format(gender))
+    return gender == True
+intro_1()
+if gender == True:
+    fight_enemy()
+#ask bridger to help with gender - true so it will call on fight function after answers the gender questoin.
